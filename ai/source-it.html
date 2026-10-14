@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source It — Ask Plena Choice to Find It For You</title>
+<meta name="description" content="Can't find what you're shopping for? Tell Plena Choice what you want and your budget. We hunt it down and send you the link. Join the sourcing list for new finds.">
+<link rel="canonical" href="https://calvin636.github.io/blackbrown-htx/ai/source-it.html">
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:24px;color:#111;line-height:1.55}label{display:block;margin:14px 0 4px;font-weight:600}input,textarea,select{width:100%;padding:10px;border:1px solid #bbb;border-radius:8px;font-size:16px}button{background:#111;color:#fff;padding:13px 26px;border:0;border-radius:10px;font-weight:700;font-size:16px;margin-top:16px;cursor:pointer}.out{background:#faf6ef;border:1px solid #e5ddcb;border-radius:12px;padding:16px;white-space:pre-wrap;margin-top:16px}.meta{color:#555;font-size:14px}</style></head><body>
+<h1>Source it — tell Plena Choice what you're hunting</h1>
+<p>Plena Choice is a sourcing store, not just a shelf. Tell us the product, your budget, and when you need it. We search, verify it's real and ships from the US, and send you the link. No charge for the hunt.</p>
+<form id="f">
+<label>What are you looking for?</label><input id="item" required placeholder="e.g. a light-up Halloween mask, a case for my phone, a gift for a Libra">
+<label>Budget (USD)</label><input id="budget" placeholder="e.g. under $30">
+<label>Need it by (optional)</label><input id="when" placeholder="e.g. before Halloween, next Friday">
+<label>How should we reach you?</label><input id="contact" placeholder="Threads / Facebook / Instagram handle">
+<label><input type="checkbox" id="list" checked style="width:auto"> Also put me on the sourcing list — one short message when new finds drop, no spam.</label>
+<button type="submit">Build my request</button>
+</form>
+<div class="out" id="out" hidden></div>
+<p class="meta">Send the built request to <a href="https://www.threads.com/@plena_choice">@plena_choice on Threads</a> or the Plena Choice / BlackBrown Htx page on Facebook. Requests go to Calvin's existing inboxes — nothing is stored on this page.</p>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var t='SOURCE-IT REQUEST\nLooking for: '+document.getElementById('item').value+'\nBudget: '+(document.getElementById('budget').value||'flexible')+'\nNeed by: '+(document.getElementById('when').value||'no rush')+'\nReach me at: '+(document.getElementById('contact').value||'(reply where I send this)')+'\nSourcing list: '+(document.getElementById('list').checked?'YES — add me for new finds':'no');
+var o=document.getElementById('out');o.hidden=false;o.textContent=t+'\n\nCopy this and send it to @plena_choice on Threads or Facebook — that is your request, logged.';
+if(navigator.clipboard){navigator.clipboard.writeText(t);}});
+</script>
+</body></html>
