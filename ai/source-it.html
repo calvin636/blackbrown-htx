@@ -11,14 +11,20 @@
 <label>Budget (USD)</label><input id="budget" placeholder="e.g. under $30">
 <label>Need it by (optional)</label><input id="when" placeholder="e.g. before Halloween, next Friday">
 <label>How should we reach you?</label><input id="contact" placeholder="Threads / Facebook / Instagram handle">
-<label><input type="checkbox" id="list" checked style="width:auto"> Also put me on the sourcing list — one short message when new finds drop, no spam.</label>
+<label>Put me on the list for:</label>
+<label style="font-weight:400"><input type="checkbox" class="seg" value="Weekly new finds" checked style="width:auto"> Weekly new finds — one short message a week</label>
+<label style="font-weight:400"><input type="checkbox" class="seg" value="iPhone Duo waitlist" style="width:auto"> iPhone Duo waitlist — message me when preorders open (Oct 16) and on launch day (Oct 23)</label>
+<label style="font-weight:400"><input type="checkbox" class="seg" value="Seasonal alerts" style="width:auto"> Seasonal alerts — Halloween, Christmas, gift deadlines</label>
+<label style="font-weight:400"><input type="checkbox" class="seg" value="Birthday / zodiac picks" style="width:auto"> Birthday / zodiac picks — tell us your sign in the box above</label>
+<label style="font-weight:400"><input type="checkbox" id="list" checked style="width:auto"> Also add me to the sourcing list — if I ask you to find something, keep me posted until you do. No spam, leave anytime with one word.</label>
 <button type="submit">Build my request</button>
 </form>
 <div class="out" id="out" hidden></div>
 <p class="meta">Send the built request to <a href="https://www.threads.com/@plena_choice">@plena_choice on Threads</a> or the Plena Choice / BlackBrown Htx page on Facebook. Requests go to Calvin's existing inboxes — nothing is stored on this page.</p>
 <script>
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
-var t='SOURCE-IT REQUEST\nLooking for: '+document.getElementById('item').value+'\nBudget: '+(document.getElementById('budget').value||'flexible')+'\nNeed by: '+(document.getElementById('when').value||'no rush')+'\nReach me at: '+(document.getElementById('contact').value||'(reply where I send this)')+'\nSourcing list: '+(document.getElementById('list').checked?'YES — add me for new finds':'no');
+var segs=[];document.querySelectorAll('.seg:checked').forEach(function(c){segs.push(c.value)});
+var t='SOURCE-IT REQUEST\nLooking for: '+document.getElementById('item').value+'\nBudget: '+(document.getElementById('budget').value||'flexible')+'\nNeed by: '+(document.getElementById('when').value||'no rush')+'\nReach me at: '+(document.getElementById('contact').value||'(reply where I send this)')+'\nList segments: '+(segs.length?segs.join(', '):'none')+'\nSourcing list: '+(document.getElementById('list').checked?'YES — add me':'no');
 var o=document.getElementById('out');o.hidden=false;o.textContent=t+'\n\nCopy this and send it to @plena_choice on Threads or Facebook — that is your request, logged.';
 if(navigator.clipboard){navigator.clipboard.writeText(t);}});
 </script>
